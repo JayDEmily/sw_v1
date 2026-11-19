@@ -1,0 +1,141 @@
+{
+  "id": "mate-concentric",
+  "title": "Concentric mate",
+  "status": "AUTHORED_NOT_INDEPENDENTLY_REVIEWED",
+  "documented_in": "research/evidence/OFFLINE_HELP_INDEX.md",
+  "environment": "SOLIDWORKS 2021 SP1 offline Design Help",
+  "runtime_status": "NOT_TESTED",
+  "data": {
+    "sources": [
+      {
+        "url": "https://help.solidworks.com/2021/english/solidworks/sldworks/c_example_of_concentric_mate_error_swassy.htm",
+        "section": "Example: Concentric Mate Error",
+        "fact": "2021 Help shows a second concentric mate overdefining an assembly if the two hole-centre distances differ.",
+        "status": "offline-chm",
+        "offline_topic": "c_example_of_concentric_mate_error_swassy.htm",
+        "local_archive_sha256": "9e4357baab971a63bb3a8c4e431cae579ba42f8c3a6d2a69d410f513cb77aec6"
+      },
+      {
+        "url": "https://help.solidworks.com/2021/english/solidworks/sldworks/t_techniques_fixing_mate_problems.htm",
+        "section": "Techniques for Fixing Mate Problems",
+        "fact": "2021 Help recommends MateXpert, examining red mates, suppressing conflicting mates, DOF inspection and considering fixed components.",
+        "status": "offline-chm",
+        "offline_topic": "t_techniques_fixing_mate_problems.htm",
+        "local_archive_sha256": "9e4357baab971a63bb3a8c4e431cae579ba42f8c3a6d2a69d410f513cb77aec6"
+      },
+      {
+        "url": "https://help.solidworks.com/2021/english/solidworks/sldworks/t_allowing_misaligned_concentric_mates.htm",
+        "section": "Allowing Misaligned Concentric Mates",
+        "fact": "2021 Help describes deliberately allowed concentric misalignment with an option/tolerance and separate Misaligned mate folder.",
+        "status": "offline-chm",
+        "offline_topic": "t_allowing_misaligned_concentric_mates.htm",
+        "local_archive_sha256": "9e4357baab971a63bb3a8c4e431cae579ba42f8c3a6d2a69d410f513cb77aec6"
+      }
+    ],
+    "symptoms": [
+      "Adding a second concentric mate produces an over-defined assembly.",
+      "A formerly solved concentric mate conflicts after geometry or fixed-state changes.",
+      "Two mating hole patterns are nearly aligned but exact concentric constraints cannot both be solved."
+    ],
+    "rivals": [
+      "Hole-to-hole centre distances differ between two components, making exact coaxiality impossible for both pairs.",
+      "Other mates restrict a component position or degrees of freedom and conflict with the requested axis.",
+      "A component is fixed or an in-context reference changed, preventing desired alignment.",
+      "Intended design permits finite misalignment, but exact concentric relations were incorrectly specified."
+    ],
+    "probes": [
+      {
+        "id": "mate-hole-pitch",
+        "test": "On a disposable assembly copy, inspect the two hole axes and compare centre-to-centre spacings of the paired holes in the respective part coordinate contexts, before adding an exact second concentric mate.",
+        "mode": "ui_only",
+        "conditions": "2021 assembly, active configuration and component transforms; lengths in mm; record each pair, measurement method and applied mates; read-only geometry inspection on a copy.",
+        "rivals": "Mismatched hole spacing versus conflict solely from another mate.",
+        "basis": "DOCUMENTED: Example: Concentric Mate Error; measurement-based diagnosis is a hypothesis.",
+        "member": "not applicable: UI-only procedure; no API member asserted",
+        "outcomes": [
+          {
+            "observation": "Corresponding hole spacings differ beyond measurement tolerance",
+            "meaning": "Explains why two exact concentric mates cannot generally be satisfied simultaneously.",
+            "limits": "Does not prove the mismatch is an unintended CAD error or rule out additional mate conflicts.",
+            "next_step": "Confirm engineering design intent, hole tolerances and optional misalignment capability."
+          },
+          {
+            "observation": "Hole spacings agree within measured resolution but mate fails",
+            "meaning": "Weakens pitch mismatch as sole explanation.",
+            "limits": "Axes may be angled or another mate/fixed state may still conflict.",
+            "next_step": "Inspect MateXpert and existing degrees of freedom."
+          },
+          {
+            "observation": "Inconclusive: axes/centres or configurations are not comparable",
+            "meaning": "No pitch conclusion.",
+            "limits": "Do not treat approximate graphics alignment as exact geometry.",
+            "next_step": "Identify comparable axial geometry and consistent coordinate frame."
+          }
+        ]
+      },
+      {
+        "id": "mate-conflict-isolation",
+        "test": "In a disposable copy, run MateXpert/View Mate Errors, inspect highlighted red mates and component fixed states; temporarily suppress one competing mate at a time and inspect remaining degrees of freedom.",
+        "mode": "disposable_copy",
+        "conditions": "Record assembly/configuration, pre-existing mate graph and suppression changes; suppressing or floating changes assembly state; only disposable fixture; avoid Force Mate because it can break other mates.",
+        "rivals": "Conflicting mate network / fixed component versus intrinsically impossible geometric relationship.",
+        "basis": "DOCUMENTED: Techniques for Fixing Mate Problems; resolving a mate after suppression is conditional evidence.",
+        "member": "not applicable: UI-only procedure; no API member asserted",
+        "outcomes": [
+          {
+            "observation": "Target concentric mate solves only when another mate is suppressed or a component floated",
+            "meaning": "The suppressed mate/fixed condition participates in the conflict.",
+            "limits": "Does not mean suppressing it is the correct design solution.",
+            "next_step": "Review desired kinematic degrees of freedom and replace a redundant constraint deliberately."
+          },
+          {
+            "observation": "Target mate still fails after irrelevant mates are suppressed",
+            "meaning": "The tested conflicts were not sufficient to explain failure.",
+            "limits": "A geometry mismatch, remaining constraint or stale reference may still exist.",
+            "next_step": "Compare hole axes/pitches and inspect mate references."
+          },
+          {
+            "observation": "Inconclusive: MateXpert cannot identify sources or suppression yields unstable results",
+            "meaning": "No reliable unique conflicting mate identified.",
+            "limits": "Do not use Force Mate to claim causal isolation.",
+            "next_step": "Construct minimal two-component test assembly from copies."
+          }
+        ]
+      },
+      {
+        "id": "mate-intended-misalignment",
+        "test": "If design permits intentional mismatch, inspect the misaligned-concentric-mate option and tolerance on disposable assembly; compare exact-mate failure with explicitly permitted misalignment.",
+        "mode": "disposable_copy",
+        "conditions": "2021 assembly, recorded linear misalignment tolerance in mm, actual hole spacing difference and position; enabling this changes mate conditions, so disposable copy only.",
+        "rivals": "Design-approved misalignment versus accidental geometric overdefinition.",
+        "basis": "DOCUMENTED: Allowing Misaligned Concentric Mates; correctness for a particular design requires separate engineering judgement.",
+        "member": "not applicable: UI-only procedure; no API member asserted",
+        "outcomes": [
+          {
+            "observation": "Second mate succeeds only with nonzero allowed misalignment",
+            "meaning": "Supports deliberate mismatch accommodation as the mechanism.",
+            "limits": "Does not establish acceptable fit, stress, assembly or manufacturing tolerance.",
+            "next_step": "Check tolerancing and functional design intent before accepting any model change."
+          },
+          {
+            "observation": "Second mate still fails with allowed misalignment",
+            "meaning": "Specified tolerance or another conflict may be insufficient.",
+            "limits": "Does not disprove mismatch as a contributor.",
+            "next_step": "Compare the residual error to allowed tolerance and inspect other mates."
+          },
+          {
+            "observation": "Inconclusive: option unavailable or permission/design tolerance unknown",
+            "meaning": "No conclusion about whether misalignment is intended.",
+            "limits": "Do not silently add tolerance to make the assembly solve.",
+            "next_step": "Record unmet option or engineering design clarification as unresolved."
+          }
+        ]
+      }
+    ],
+    "limitations": [
+      "A solvable mate does not prove dimensional fit or mechanical correctness.",
+      "Enabling misalignment changes assembly constraint semantics; must not be presented as generic repair.",
+      "No installed SOLIDWORKS runtime tests, actual assemblies or API calls were performed."
+    ]
+  }
+}

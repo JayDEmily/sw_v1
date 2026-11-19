@@ -1,0 +1,6 @@
+Give this folder to a web-enabled coding agent with a persistent workspace, and say: Follow WORK_ORDER.md. Use build.py for the queue. Start with the three pilot jobs and reviews, then enumerate the catalog. Do not invent evidence to clear a blocked job. No CAD files needed.
+
+Requirements: Python 3.8+, one coordinator per working directory. The ledger lives in the working directory. Back it up. Readable approved records: each 'done' item's history in ledger.json. No runtime probe code is generated or executed. The driver handles structure and progress; only the reviewer checks truth. If using a chat-only model without file access or a scheduler, it cannot run unattended.
+
+With a model runner already configured: python build.py run 6 YOUR_WORKER_COMMAND [args...]
+This is a placeholder for YOUR adapter, not a bundled model. Adapter receives one prompt on stdin, browses the web, returns exactly one JSON object on stdout, logs to stderr; exit nonzero to stop. Rerun with a larger budget to resume. Run python build.py status to see backlog and exceptions. Or use next/accept directly in a coding agent. If search returns a different documentation year, explicitly navigate to 2021 before accepting evidence. Keep generated records separate from test results obtained later on your local installation.

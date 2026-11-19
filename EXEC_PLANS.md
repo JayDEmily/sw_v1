@@ -5,8 +5,8 @@
 **Repository:** `https://github.com/JayDEmily/sw_v1`
 **Working branch:** `work/sw2021-research-foundation-20261119`
 **Starting point:** `main` at `c6c8eb38ffbd1c82fc8ff62483830f02dcacd55d` ("Initial commit", README only).
-**State:** FOUNDATION DOCUMENTS ONLY. Implementation Leaves L01–L09 are **NOT STARTED**. This plan is a specification, not a claim of execution or validated SOLIDWORKS behaviour.
-**Current authority:** Publish ONLY the three root Markdown documents on the working branch, verify commit/readback and **STOP**. A subsequent, explicit user request is required to begin implementing this plan.
+**State (19 Nov 2026):** G0, L01 and L02 complete; L03 three authored pilot drafts queued; L04 independent review outstanding; G1 owner assessment not reached. L05–L09 not started. No runtime SOLIDWORKS validation claimed.
+**Current authority:** After the documentation-only G0 checkpoint, the user said **“Okay. You can start work.”** in response to the proposed L01–L04 implementation through G1. This authorises routine reversible work in those leaves, not scaling, production CAD changes, altering frozen governance or a merger into `main`.
 
 ## A. Purpose, user outcome and scope
 
@@ -61,7 +61,7 @@ Each leaf below is a bounded unit. Start with read-only inspection of the requir
 
 Keep a concise leaf log here (date, branch, commit, changed paths, check commands/results, remaining issues). Add more detail in a separate evidence artefact only if a material finding needs it; do not inflate permanent governance. A worker may divide a large leaf into independently recoverable subjobs without changing its acceptance criteria or scope.
 
-### G0 — Governance foundation: CURRENT COMMISSION
+### G0 — Governance foundation: COMPLETED 19 NOVEMBER 2026
 
 **Input:** blank GitHub `sw_v1` repo at the initial commit; three supplied project attachments; official OpenAI documentation referenced below.
 
@@ -73,7 +73,7 @@ Keep a concise leaf log here (date, branch, commit, changed paths, check command
 
 ### L01 — Source admission and reproducible workspace
 
-**Status:** Not started. **Prerequisite:** new user instruction authorising implementation.
+**Status:** Complete 19 November 2026; original files and extracted members hash-verified in Ubuntu. **Authority:** subsequent user instruction to start work.
 
 **Work:** obtain the three exact supplied attachments, verify archive/member hashes above, reject mismatches, unpack into a clearly labelled source/staging area; preserve the originals. Establish the project's dedicated Ubuntu working path and concise README/run instructions. No Python execution beyond local dry-run/structural checks and no CAD runtime execution. Reconcile Python 3.8+ and Windows macro constraints without assuming the same interpreter or filesystem.
 
@@ -81,7 +81,7 @@ Keep a concise leaf log here (date, branch, commit, changed paths, check command
 
 ### L02 — Repair essential queue/control gaps, not the research method
 
-**Status:** Not started. **Depends:** L01.
+**Status:** Implementation complete; 14/14 synthetic tests pass in Ubuntu. **Depends:** L01.
 
 **Work:** retain `WORK_ORDER.md`'s `discover`/`card`/`review` JSON contract, improving only justified coordination features:
 1. Hard gate all non-pilot discovery/card jobs until the **three** pilot cards each have a valid independent evidence-review outcome **and** an explicit recorded owner decision to scale; block `run` and manual `next/accept` from bypassing this condition.
@@ -95,7 +95,7 @@ Keep a concise leaf log here (date, branch, commit, changed paths, check command
 
 ### L03 — Three bounded pilot research jobs
 
-**Status:** Not started. **Depends:** L02 and working public-documentation access.
+**Status:** Three documented drafts authored, checked against directly read installed 2021 Help, and admitted to local review queue; **not independently reviewed**. **Depends:** L02 and available 2021 primary evidence.
 
 **Work:** with a web-enabled worker, create one diagnostic card each for:
 - `shell` (part geometry / whole-feature versus individual-face offset);
@@ -108,7 +108,7 @@ For each: cite source URL + exact 2021 section and paraphrased fact; distinguish
 
 ### L04 — Genuine evidence review of each pilot
 
-**Status:** Not started. **Depends:** L03.
+**Status:** Pending distinct reviewer and independent source reopening. Not complete; same-session author self-check is expressly non-independent. **Depends:** L03.
 
 **Work:** a separate reviewer pass independently reopens cited 2021 sources, verifies exact version/API references, challenges the strongest diagnostic claim, evaluates competing explanations, tests/probe reversibility, missing inconclusive outcomes and unsupported generalisations. Reject inadequate cards with specific corrections; blocked primary evidence remains blocked.
 
@@ -174,14 +174,14 @@ Record **three different thresholds**: (i) `research authored`, (ii) `source evi
 
 ## F. Checkpoint register (maintain only after observed work)
 
-| Gate or leaf | State as of foundation | Required evidence before changing state |
+| Gate or leaf | Current observed state | Verification / evidence required |
 | --- | --- | --- |
-| G0 governance commit | Pending remote verification during this commission | remote SHA/tree/parent, exact file list/readback, checksums |
-| L01 source admission | Not started | source hashes and manifest |
-| L02 queue gates | Not started | observed synthetic tests and code diff |
-| L03 three pilot research cards | Not started | three sourced records |
-| L04 independent review | Not started | three actual review verdicts |
-| G1 owner scale decision | Not started | user decision recorded |
+| G0 governance commit | **Complete** — `641ff2dc87df6fef5c3b57dd2e558c1509df3d68` | remote SHA, parent, tree, three-file readback and hashes verified previously |
+| L01 source admission | **Complete** — verified 3 originals, extracted unchanged | `docs/SOURCE_MANIFEST.md`; remote SHA-256 readback |
+| L02 queue gates | **Implemented; 14 tests pass** in Ubuntu Python 3.14.4 | `src/queue.py`, `tests/test_queue.py`; additional external review still required for evidence truth |
+| L03 three pilot research cards | **Authored and queued for review** | `research/pilots/` 3 JSON+Markdown; official installed 2021 CHM topics; ledger 3 research admissions |
+| L04 independent review | **Pending** — distinct reviewer/source reopening not yet available | `research/reviews/PRE_REVIEW_EVIDENCE_CHECK.md` is same-session only, NOT L04 approval |
+| G1 owner scale decision | **Pending** — not eligible until three independent verdicts | no owner decision recorded; `owner_gate: pending` |
 | L05 inventory | Not started | official tree plus reconciliation |
 | L06 research campaign | Not started | reviewed cards and coverage/exception report |
 | L07 SW2021 bench validation | Not started | actual service pack, fixtures and observed results |
@@ -202,6 +202,18 @@ The following links were consulted on 19 November 2026; they justify the **form*
 
 A `PLANS.md` or `.agent/PLANS.md` name is an OpenAI Cookbook **convention**, not a mandatory API. This project deliberately uses the requested named plan `EXEC_PLANS.md`, referenced explicitly from `AGENTS.md`.
 
-## H. Immediate stop condition
+## H. Current stop condition and handoff
 
-After committing and independently reading back the **three** foundational documents on the named working branch, provide the branch, GitHub commit URL, three file paths and observed verification. **STOP.** Do not treat publication of this plan as permission to begin L01 or any subsequent leaf.
+The initial foundation-only stop was satisfied by commit `641ff2dc87df6fef5c3b57dd2e558c1509df3d68`. Under the subsequent user instruction to **start work**, implement L01–L04 and STOP at the owner assessment **G1** before any L05 discovery or scale-up. If an independent reviewer is unavailable, preserve the three authored pilots at `review`, document the L04 hold and **do not** invent a reviewer or imply G1 has passed. Do not modify the frozen governance files or `main`.
+
+### 19 November 2026 implementation checkpoint
+
+- Installed environment: SOLIDWORKS 2021 SP1, VBA 7.1, local Design Help `sldworks.chm` and API Help. Directly inspected ten relevant installed 2021 Design Help topics via read-only 7-Zip extraction; CHM SHA-256 `9e4357baab971a63bb3a8c4e431cae579ba42f8c3a6d2a69d410f513cb77aec6`. No SOLIDWORKS launch, CAD file tests or macro execution.
+- Source admission: three byte-for-byte originals under `source/originals/`; original builder/helper extracted to `source/extracted/`; root `WORK_ORDER.md` retains source bytes. Hashes in `docs/SOURCE_MANIFEST.md` verified in Ubuntu.
+- Queue: `src/queue.py` schema 2; preserves source and actor metadata, one-writer and atomic/backup persistence, stale-token rejection, blocked/revision trail, genuine-distinct-review **attestation requirement**, owner decision and hard pilot gating. It cannot cryptographically verify reviewer identity or establish claim truth automatically. Do not overstate the validator's guarantees.
+- Verification: `python3 -m unittest discover -s tests -v` **14/14 pass** on Ubuntu Python 3.14.4; compile checks pass. Synthetic approval fixtures test the gate logic, not real independent review.
+- Authored drafts: `shell`, `spline-3d`, `mate-concentric` each have JSON+Markdown research records with documented sources, alternatives, procedures, outcomes, inconclusive results and limitations. `python3 scripts/import_pilot_drafts.py` admitted all three to local ignored `ledger.json` as `review`; `python3 build.py status` reports 3/3 pilot review, 0 evidence reviewed, owner gate pending, 3 discovery jobs still `todo` but ineligible.
+- Review status: a same-session primary-source check is recorded in `research/reviews/PRE_REVIEW_EVIDENCE_CHECK.md`; it is **not independent L04 review**. A separate reviewing context must actually reopen the installed primary sources and challenge each pilot. L04 and G1 remain open.
+- Later feature-family preferences (user reported): include Flow Simulation, CAM, Inspection and Plastics in a **future separately scoped research phase**; exclude Electrical/PCB; no need for Visualize photorealistic-rendering tutorials. The existing primary research phase remains core modelling/assemblies/mates. This does not silently amend frozen scope.
+
+Resume from the published current working-branch tip; independently confirm exact hashes, current ledger and review status before further work.

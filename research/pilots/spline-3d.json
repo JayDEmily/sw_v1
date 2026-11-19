@@ -1,0 +1,149 @@
+{
+  "id": "spline-3d",
+  "title": "3D spline",
+  "status": "AUTHORED_NOT_INDEPENDENTLY_REVIEWED",
+  "documented_in": "research/evidence/OFFLINE_HELP_INDEX.md",
+  "environment": "SOLIDWORKS 2021 SP1 offline Design Help",
+  "runtime_status": "NOT_TESTED",
+  "data": {
+    "sources": [
+      {
+        "url": "https://help.solidworks.com/2021/english/solidworks/sldworks/t_Creating_3D_Splines.htm",
+        "section": "Creating 3D Splines",
+        "fact": "2021 Help describes spline placement in a 3D sketch and Tab to switch planes while creating it.",
+        "status": "offline-chm",
+        "offline_topic": "t_Creating_3D_Splines.htm",
+        "local_archive_sha256": "9e4357baab971a63bb3a8c4e431cae579ba42f8c3a6d2a69d410f513cb77aec6"
+      },
+      {
+        "url": "https://help.solidworks.com/2021/english/solidworks/sldworks/HIDD_DVE_SKETCH_SPLINE_3D.htm",
+        "section": "3D Spline PropertyManager",
+        "fact": "The 2021 3D spline panel exposes existing relations, point XYZ coordinates, tangent controls, reset and Relax Spline.",
+        "status": "offline-chm",
+        "offline_topic": "HIDD_DVE_SKETCH_SPLINE_3D.htm",
+        "local_archive_sha256": "9e4357baab971a63bb3a8c4e431cae579ba42f8c3a6d2a69d410f513cb77aec6"
+      },
+      {
+        "url": "https://help.solidworks.com/2021/english/solidworks/sldworks/c_Sketch_Relations_in_3D_Sketches.htm",
+        "section": "Sketch Relations in 3D Sketches",
+        "fact": "2021 Help describes relations on 3D spline handles, axis alignment and relations across sketch planes.",
+        "status": "offline-chm",
+        "offline_topic": "c_Sketch_Relations_in_3D_Sketches.htm",
+        "local_archive_sha256": "9e4357baab971a63bb3a8c4e431cae579ba42f8c3a6d2a69d410f513cb77aec6"
+      },
+      {
+        "url": "https://help.solidworks.com/2021/english/solidworks/sldworks/t_Using_Control_Polygons.htm",
+        "section": "Using Control Polygons",
+        "fact": "Control polygon nodes may be moved and XYZ set; Relax Spline can smooth an edited curve.",
+        "status": "offline-chm",
+        "offline_topic": "t_Using_Control_Polygons.htm",
+        "local_archive_sha256": "9e4357baab971a63bb3a8c4e431cae579ba42f8c3a6d2a69d410f513cb77aec6"
+      }
+    ],
+    "symptoms": [
+      "A dragged point or handle moves a 3D spline unexpectedly in depth or alters nearby curvature.",
+      "The spline changes shape or appears discontinuous after control polygon edits.",
+      "A spline point/handle will not move as expected, or solver status indicates constraints."
+    ],
+    "rivals": [
+      "Point or control handle is constrained by existing 3D sketch relations.",
+      "An unintended active placement plane or XYZ coordinate is responsible for apparent out-of-plane motion.",
+      "Tangent handle weighting, direction or internal continuity controls rather than the selected point govern curvature.",
+      "A control polygon edit changes multiple spline spans and needs re-parameterisation or deliberate smoothness constraints."
+    ],
+    "probes": [
+      {
+        "id": "spline-inspect-3d-relations",
+        "test": "Select the spline in the active 3D sketch, open 3D Spline PropertyManager, inspect Existing Relations and select each relation to highlight affected geometry; record Fully/Under Defined status.",
+        "mode": "ui_only",
+        "conditions": "2021 3D sketch, active document/configuration, read UI values only; no changes required; record point/handle and named relations.",
+        "rivals": "Constraint-driven movement versus free point/handle curvature edits.",
+        "basis": "DOCUMENTED: 3D Spline PropertyManager and Sketch Relations in 3D Sketches.",
+        "member": "not applicable: UI-only procedure; no API member asserted",
+        "outcomes": [
+          {
+            "observation": "A relation highlights the moved point/handle or external entity",
+            "meaning": "Constraint is a supported candidate for the unexpected motion.",
+            "limits": "Highlighting alone does not prove solver causality.",
+            "next_step": "On a disposable copy selectively suppress/remove that relation and compare."
+          },
+          {
+            "observation": "No relevant relation highlights and spline is under-defined",
+            "meaning": "Simple relation lock is less likely.",
+            "limits": "Unshown constraints, handle weighting and plane selection remain possible.",
+            "next_step": "Inspect XYZ coordinates, tangent properties and placement plane."
+          },
+          {
+            "observation": "Inconclusive: spline panel or relation highlight cannot be obtained",
+            "meaning": "Cannot determine relation constraints from this test.",
+            "limits": "Do not infer unconstrained movement.",
+            "next_step": "Verify entity type and open the intended 3D sketch."
+          }
+        ]
+      },
+      {
+        "id": "spline-xyz-plane-control",
+        "test": "For the affected spline point, read its X/Y/Z values and intended plane; in a disposable test sketch change only one coordinate or recreate a point with explicit plane switching, comparing projected views.",
+        "mode": "disposable_copy",
+        "conditions": "3D sketch; same coordinate system; XYZ values in model length units (record mm); creation-plane switching uses Tab; editing must be on a disposable copy.",
+        "rivals": "Actual depth/plane change versus view projection or spline-handle effect.",
+        "basis": "DOCUMENTED: Creating 3D Splines and 3D Spline PropertyManager; diagnosis is a hypothesis.",
+        "member": "not applicable: UI-only procedure; no API member asserted",
+        "outcomes": [
+          {
+            "observation": "Z or another out-of-plane coordinate changes with the unexpected motion",
+            "meaning": "Supports a genuine 3D positional change.",
+            "limits": "Does not identify which relation or action caused it.",
+            "next_step": "Check relation highlights and active reference geometry."
+          },
+          {
+            "observation": "XYZ coordinates are unchanged but curvature appears different",
+            "meaning": "Point displacement is unlikely to explain the difference.",
+            "limits": "Handle direction, view projection or changes elsewhere remain possible.",
+            "next_step": "Inspect tangent and control polygon controls."
+          },
+          {
+            "observation": "Inconclusive: coordinate reference or selected point cannot be matched",
+            "meaning": "No trustworthy comparison.",
+            "limits": "Do not infer the curve moved in XYZ.",
+            "next_step": "Identify point index and reference system before retesting."
+          }
+        ]
+      },
+      {
+        "id": "spline-handle-continuity",
+        "test": "On disposable copy, record tangent weighting/radial/polar direction and internal-continuity setting; change one handle control at a time, then try Reset This Handle or Relax Spline and compare curvature combs.",
+        "mode": "disposable_copy",
+        "conditions": "Same 3D sketch and point index, record controls and display curvature; modifying handles/relaxing spline changes geometry and may affect dependent features.",
+        "rivals": "Tangent-control curvature versus control-polygon placement or constraint effects.",
+        "basis": "DOCUMENTED: 3D Spline PropertyManager and Using Control Polygons; downstream shape prediction is a hypothesis.",
+        "member": "not applicable: UI-only procedure; no API member asserted",
+        "outcomes": [
+          {
+            "observation": "Curvature becomes smooth after Reset Handle or Relax Spline",
+            "meaning": "Supports handle/parameterisation sensitivity as a mechanism.",
+            "limits": "Does not prove the resulting curve satisfies design tolerance or downstream feature constraints.",
+            "next_step": "Quantify curvature/tangent mismatch and rebuild only in disposable test."
+          },
+          {
+            "observation": "Curvature anomaly remains with controls reset",
+            "meaning": "Weakens one-handle adjustment as complete explanation.",
+            "limits": "Point positions and relations can still impose the shape.",
+            "next_step": "Inspect point coordinates, relations and control polygon nodes."
+          },
+          {
+            "observation": "Inconclusive: control is unavailable or edited spline differs in other respects",
+            "meaning": "No valid inference about the original cause.",
+            "limits": "Unavailable controls do not imply they are unimportant.",
+            "next_step": "Document entity and active controls for separate reproduction."
+          }
+        ]
+      }
+    ],
+    "limitations": [
+      "No API access is inferred from UI features; no spline API member was claimed.",
+      "A smooth-looking spline does not establish design tolerances, curvature continuity or successful downstream sweep.",
+      "No installed SOLIDWORKS runtime tests were performed."
+    ]
+  }
+}

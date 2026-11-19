@@ -1,0 +1,142 @@
+{
+  "id": "shell",
+  "title": "Shell",
+  "status": "AUTHORED_NOT_INDEPENDENTLY_REVIEWED",
+  "documented_in": "research/evidence/OFFLINE_HELP_INDEX.md",
+  "environment": "SOLIDWORKS 2021 SP1 offline Design Help",
+  "runtime_status": "NOT_TESTED",
+  "data": {
+    "sources": [
+      {
+        "url": "https://help.solidworks.com/2021/english/solidworks/sldworks/t_Shell_Feature_Diagnostics.htm",
+        "section": "Shell Feature Diagnostics / Error Diagnostics",
+        "fact": "2021 Shell PropertyManager can diagnose Entire body or Failing faces, report minimum curvature radius and display mesh/curvature.",
+        "status": "offline-chm",
+        "offline_topic": "t_Shell_Feature_Diagnostics.htm",
+        "local_archive_sha256": "9e4357baab971a63bb3a8c4e431cae579ba42f8c3a6d2a69d410f513cb77aec6"
+      },
+      {
+        "url": "https://help.solidworks.com/2021/english/solidworks/sldworks/HIDE_SHELL_MODEL_FAIL.htm",
+        "section": "Error Message - Shell Errors",
+        "fact": "2021 examples list adjacent-face offsets, small faces/edges, and curvature limits as possible causes; recommends Check and surface offsets.",
+        "status": "offline-chm",
+        "offline_topic": "HIDE_SHELL_MODEL_FAIL.htm",
+        "local_archive_sha256": "9e4357baab971a63bb3a8c4e431cae579ba42f8c3a6d2a69d410f513cb77aec6"
+      },
+      {
+        "url": "https://help.solidworks.com/2021/english/solidworks/sldworks/c_Shell_Diagnostic_Cut.htm",
+        "section": "Shell Diagnostic Cut",
+        "fact": "2021 instructions suggest cut-extrude regions away and retry shell to localise a problem.",
+        "status": "offline-chm",
+        "offline_topic": "c_Shell_Diagnostic_Cut.htm",
+        "local_archive_sha256": "9e4357baab971a63bb3a8c4e431cae579ba42f8c3a6d2a69d410f513cb77aec6"
+      }
+    ],
+    "symptoms": [
+      "Shell feature reports failure or incomplete operation at a specified thickness.",
+      "A shell attempt fails despite a successful temporary surface offset on one or more individual faces.",
+      "A previously successful shell fails after changes to parent geometry."
+    ],
+    "rivals": [
+      "Thickness exceeds a local minimum curvature radius.",
+      "Opposing/adjacent surfaces collide or an offset passes through another face.",
+      "Small sliver faces, edges, three-sided vertex or topology causes kernel failure.",
+      "Missing/rebuilt parent geometry or outdated selection changes the intended shell problem."
+    ],
+    "probes": [
+      {
+        "id": "shell-error-diagnostics",
+        "test": "On a disposable copy edit the failing Shell feature; use Error Diagnostics > Entire body and Failing faces, then Check body/faces; note callouts, minimum curvature radius and suspect regions.",
+        "mode": "ui_only",
+        "conditions": "2021 part document, recorded active configuration and target thickness in mm; inspection does not itself alter the body, but editing/saving the feature can; do not commit geometry edits.",
+        "rivals": "Local curvature versus interference/small-face problems.",
+        "basis": "DOCUMENTED: Shell Feature Diagnostics; interpretation of why a callout matters is a hypothesis.",
+        "member": "not applicable: UI-only procedure; no API member asserted",
+        "outcomes": [
+          {
+            "observation": "Minimum radius smaller than target wall thickness and callout at suspect face",
+            "meaning": "Supports local curvature as candidate.",
+            "limits": "Does not prove it is the sole failure or that decreasing thickness yields a globally valid shell.",
+            "next_step": "On the disposable copy retry a smaller thickness and compare diagnostics."
+          },
+          {
+            "observation": "Curvature check passes at target thickness, but Shell still fails",
+            "meaning": "Weakens simple local-radius explanation; look at offsets intersecting neighbours or small faces.",
+            "limits": "Does not eliminate local curvature elsewhere or other solver constraints.",
+            "next_step": "Run targeted offset/cut probe."
+          },
+          {
+            "observation": "Inconclusive: diagnostics unavailable, blank, or feature cannot be edited",
+            "meaning": "No reliable result for this probe.",
+            "limits": "Do not infer valid geometry from an absent diagnostic.",
+            "next_step": "Confirm active configuration, feature existence and reproducible failure first."
+          }
+        ]
+      },
+      {
+        "id": "shell-targeted-offset",
+        "test": "On a disposable copy, use Offset Surface at the same distance on selected suspect face(s), testing normal direction and opposite direction separately; compare success/failure and visible interference.",
+        "mode": "disposable_copy",
+        "conditions": "Part in same configuration; offset distance equals target shell thickness (record in mm), direction, selected face and effect; create/remove only disposable reference surfaces.",
+        "rivals": "Intrinsic local offset limitation versus global intersection/trim/topology failure.",
+        "basis": "DOCUMENTED: Shell Errors recommends offset surfaces; whole-shell implication is ENGINEERING HYPOTHESIS.",
+        "member": "not applicable: UI-only procedure; no API member asserted",
+        "outcomes": [
+          {
+            "observation": "Selected face fails surface offset in one direction",
+            "meaning": "Supports that this local offset is problematic.",
+            "limits": "Does not show it is the only cause or that this direction matches the shell interior everywhere.",
+            "next_step": "Inspect curvature and adjacent faces in the reported area."
+          },
+          {
+            "observation": "All selected faces return offset surfaces but Shell still fails",
+            "meaning": "Local operations are possible for tested faces; global coupling remains suspect.",
+            "limits": "Individual offsets do not validate mutual intersections, trims, closure or final shell topology.",
+            "next_step": "Examine neighbours and run diagnostic-cut localisation."
+          },
+          {
+            "observation": "Inconclusive: offset cannot be tested or input selection is ambiguous",
+            "meaning": "No reliable geometric inference.",
+            "limits": "This is not a passed offset test.",
+            "next_step": "Record affected face and use built-in Error Diagnostics or inspect geometry manually."
+          }
+        ]
+      },
+      {
+        "id": "shell-diagnostic-cut",
+        "test": "On disposable copy, cut away one suspected region with Cut-Extrude, retry Shell with otherwise unchanged parameters; progressively vary the removed region.",
+        "mode": "disposable_copy",
+        "conditions": "Part copy; identical configuration, shell thickness/removal faces; document cut volume and compare each retained geometry; cutting changes topology and must never touch production.",
+        "rivals": "Localised topology/interference versus causes remaining elsewhere.",
+        "basis": "DOCUMENTED: Shell Diagnostic Cut; causal localisation is conditional on controlled geometry changes.",
+        "member": "not applicable: UI-only procedure; no API member asserted",
+        "outcomes": [
+          {
+            "observation": "Shell works after removing a specific region",
+            "meaning": "The removed region or its interactions are implicated.",
+            "limits": "Does not identify the unique faulty face; cut changes global topology too.",
+            "next_step": "Narrow removal using smaller cuts and inspect the boundary."
+          },
+          {
+            "observation": "Shell still fails after a cut",
+            "meaning": "A cause may remain in the retained model or be introduced by the cut.",
+            "limits": "Cannot prove the removed region was irrelevant.",
+            "next_step": "Try a different partition and compare thickness/curvature."
+          },
+          {
+            "observation": "Inconclusive: cut destroys shell intent or yields non-comparable geometry",
+            "meaning": "No valid localisation under these changed conditions.",
+            "limits": "Do not claim the original model is fixed or causality proved.",
+            "next_step": "Return to unmodified copy and use local Check diagnostics."
+          }
+        ]
+      }
+    ],
+    "limitations": [
+      "No runtime invocation or model fixture was used for these pilot steps.",
+      "Successful surface offsets are not a proof of whole-shell success.",
+      "A failed Shell creation may leave no persistent failed feature-tree node.",
+      "The installed 2021 Help text was read; no 2021 API signatures were asserted for UI diagnostics."
+    ]
+  }
+}

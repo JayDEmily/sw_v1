@@ -1,0 +1,10 @@
+# Persisted runtime queue is local, not source of reviewed evidence
+ledger.json
+ledger.json.bak
+.ledger.lock/
+.ledger-*.tmp
+.ledger-bak-*
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
