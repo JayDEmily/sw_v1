@@ -1,19 +1,47 @@
-# sw_v1 — SOLIDWORKS 2021 diagnostic research
+# sw_v1 — SOLIDWORKS 2021 diagnostic knowledge project
 
-Read **frozen** [GUARDRAILS.md](GUARDRAILS.md), [AGENTS.md](AGENTS.md), then the live [EXEC_PLANS.md](EXEC_PLANS.md).
+**Read** frozen [GUARDRAILS.md](GUARDRAILS.md) and [AGENTS.md](AGENTS.md), then living [EXEC_PLANS.md](EXEC_PLANS.md). The 19 November owner instruction authorises full-catalogue research now, without waiting for the pilot review decision; see [scope update](docs/OWNER_SCOPE_UPDATE_20261119.md).
 
-This repository contains a research coordinator and the exact archived starter inputs. It is **not** a validated CAD diagnosis application. No macros are executed by the queue.
+## What is actually built
 
-- View local queue: `python3 build.py status`
-- Request current bounded research job: `python3 build.py next`
-- Submit a checked worker response: `python3 build.py accept /absolute/path/reply.json`
-- Configure an external independent worker only when separately authorised; `python3 build.py run N WORKER ...` has no bundled AI service or browser.
-- The three pilots must pass source reopening by a distinct reviewer and the owner must explicitly approve expansion before any discovery job becomes eligible. Do **not** fabricate owner decisions or reviewer identities.
+- Source archive admission with exact input hashes, local Ubuntu Git checkpoints and source version notes.
+- A synthetic-tested, independently review-gated three-pilot research queue (`build.py`, `src/queue.py`). Its three source-backed pilot diagnostic drafts remain **unreviewed**.
+- A **separate full-product source index**, assembled from 14 locally installed 2021-era CHM Help archives: core modelling, API, Flow Simulation, CAM, Inspection and Plastics. API references are deliberately not equated to UI commands or model features.
+- Complete TOC topic dossiers and a research worklist, each explicitly marked as source-indexed / unreviewed / runtime-untested.
+- A local read-only SQLite FTS search index generated from the locally installed Help text, suitable as the data-side starting point for a future SOLIDWORKS Task Pane integration. The UI add-in **does not yet exist**.
 
-Original artefacts and hashes: [source manifest](docs/SOURCE_MANIFEST.md). Current environment: [preflight](docs/ENVIRONMENT_PREFLIGHT.md). Research records and review status: `research/`. The queue's local `ledger.json` and `.bak` are ignored to avoid mistaking auto-generated state for source evidence.
+See [exact source and missing-content counts](library/COVERAGE.md) and [original input manifest](docs/SOURCE_MANIFEST.md). The installed Inspection CHM includes an internally 2019-labelled TOC; do not assert a blanket release-specific validation from that archive.
 
-Python >=3.8, standard library. This phase does not require installing SOLIDWORKS modules. For queued review, `directly-opened` means the reviewer actually accessed the 2021 page content rather than merely a search-result excerpt; where the Help site's JavaScript shell prevents that, record an evidence blocker and use the user's installed offline 2021 API Help only for API statements it actually contains.
+## Search locally in Ubuntu
 
-### Current pilot status
+```sh
+cd /home/jds/sw_v1
+python3 scripts/search_library.py "shell fails"
+python3 scripts/search_library.py "concentric mate"
+python3 scripts/search_library.py "turbulent flow" --source flow
+python3 scripts/search_library.py "milling toolpath" --source cam_milling
+python3 scripts/search_library.py "mesh quality" --source plastics
+python3 scripts/search_library.py "shell feature" --json
+```
 
-Three user-readable drafts: `research/pilots/{shell,spline-3d,mate-concentric}.md`, with machine-readable `.json` partners. Source inspection: `research/evidence/OFFLINE_HELP_INDEX.md`. Same-session preliminary audit: `research/reviews/PRE_REVIEW_EVIDENCE_CHECK.md`. **Independent L04 review has not occurred**; discovery remains gated. Do not confuse author self-check with independent approval.
+The search API can return source text context and source locators. A result is **not** an independent engineering diagnosis and is not proof that any CAD macro or API method works.
+
+## Reproduce the index using installed source archives
+
+```sh
+python3 scripts/build_full_catalogue.py
+python3 scripts/cache_source_pages.py
+python3 scripts/build_search_db.py
+python3 scripts/build_topic_dossiers.py
+python3 scripts/generate_research_worklist.py
+python3 scripts/audit_coverage.py
+python3 -m unittest discover -s tests -v
+```
+
+The extraction uses the existing Windows 7-Zip binary and read-only installed Help archives. The extracted copyrighted Help pages and the full-text SQLite database are kept under ignored `.cache/` on this Ubuntu computer, not committed for external distribution. Compressed catalogue metadata, reports, worklist and scripts are versioned in **local Ubuntu Git only**.
+
+## Remaining work
+
+The whole documentation corpus is indexed, **not** a finished feature-by-feature causal diagnostic library. A real research/review runner or separate reviewing workers must use the bounded worklist and produce independently checked differential diagnoses, then validate selected tests on disposable SW2021 models. Feature inventory reconciliation and a Windows SOLIDWORKS Task Pane add-in also remain open. Do not create fake review approvals, claim full feature coverage from TOC counts, or run macros on production CAD.
+
+The previous macro sources remain in `source/originals/` and `source/extracted/`, unexecuted. For the legacy six-job pilot queue: `python3 build.py status`; the local `ledger.json` is intentionally ignored by Git.

@@ -1,0 +1,12 @@
+{
+  "research_topic_jobs": 4373,
+  "navigation_only_headings_not_queued": 177,
+  "by_status": {
+    "needs_diagnostic_research": 4373
+  },
+  "ready_for_independent_review": 0,
+  "finished_differential_diagnoses": 0,
+  "worklist_path": "library/research_worklist.jsonl.gz",
+  "worklist_sha256": "c96d2d860fddcfb1dc92d339a93a3a5f5818c82788ee87d8ebdc83ff621ef4e0",
+  "warning": "Worklist documents scope, not completed diagnosis or accepted review."
+}

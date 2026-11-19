@@ -1,0 +1,281 @@
+source,title,local_member,scope
+api,Delegates,,reference_only
+api,Interfaces,,reference_only
+api,SolidWorks.Interop.sldworks Namespace,,reference_only
+cam_api,CWSpindleType_e,html/enums/CWSpindleType_e/index.htm,reference_only
+cam_api,Hierarchy,,reference_only
+cam_api,Hierarchy,,reference_only
+cam_api,Interfaces,html/interfaces/index.htm,reference_only
+cam_api,Introduction,,reference_only
+cam_api,Introduction,,reference_only
+cam_api,Sample Code,,reference_only
+cam_api,Sample Code,,reference_only
+cam_master,SOLIDWORKS CAM Online Help,,in_scope
+cam_milling,2 Axis Mill Cycles,,in_scope
+cam_milling,2.5 Axis Features,,in_scope
+cam_milling,3 Axis Mill Cycles,,in_scope
+cam_milling,API,,in_scope
+cam_milling,Area Clearance,,in_scope
+cam_milling,Assembly Mode,,in_scope
+cam_milling,Automatic Feature Recognition,,in_scope
+cam_milling,Boring,,in_scope
+cam_milling,Center Drilling,,in_scope
+cam_milling,Combining Operations,,in_scope
+cam_milling,Contour Mill,,in_scope
+cam_milling,Countersink,,in_scope
+cam_milling,Defining the Machine,,in_scope
+cam_milling,Defining the Stock,,in_scope
+cam_milling,Defining the Stock,,in_scope
+cam_milling,Drilling,,in_scope
+cam_milling,Editing and Updating 2.5 Axis Features,,in_scope
+cam_milling,Face Milling,,in_scope
+cam_milling,Flat Area,,in_scope
+cam_milling,Generating and Working with Toolpaths,,in_scope
+cam_milling,Glossary of Mill Terms,,in_scope
+cam_milling,Inserting 2.5 Axis Features,,in_scope
+cam_milling,Inserting Operations,,in_scope
+cam_milling,Machinable Features,,in_scope
+cam_milling,Mill,,in_scope
+cam_milling,Modifying Machinable Features,,in_scope
+cam_milling,Multi Surface Features,,in_scope
+cam_milling,Operations,,in_scope
+cam_milling,Options Dialog Box,,in_scope
+cam_milling,PDM Data,,in_scope
+cam_milling,Pattern Features,,in_scope
+cam_milling,Post Processing,,in_scope
+cam_milling,Probe Cycles,,in_scope
+cam_milling,QUICK-TOURS,,in_scope
+cam_milling,Reaming,,in_scope
+cam_milling,Rebuilding After Model Changes,,in_scope
+cam_milling,Rebuilding after Stock Definition Changes,,in_scope
+cam_milling,Rough Mill,,in_scope
+cam_milling,SOLIDWORKS CAM Basics,,in_scope
+cam_milling,SOLIDWORKS CAM Configurations,,in_scope
+cam_milling,SOLIDWORKS CAM Library Objects,,in_scope
+cam_milling,Setup Sheets,,in_scope
+cam_milling,Single Point,,in_scope
+cam_milling,Sorting Operations,,in_scope
+cam_milling,Steps to Generate NC Code,,in_scope
+cam_milling,Tapping,,in_scope
+cam_milling,Thread Milling,,in_scope
+cam_milling,Tools,,in_scope
+cam_milling,User Defined Tools and Holders,,in_scope
+cam_milling,VoluMill,,in_scope
+cam_milling,Working in the SOLIDWORKS CAM Trees,,in_scope
+cam_milling,Working with Mill Part Setups (Part Mode),,in_scope
+cam_milling,Z Level,,in_scope
+cam_tbm,GD & T tab,,in_scope
+cam_tbm,ISO 286 tab,,in_scope
+cam_tbm,Multisurface Features tab,,in_scope
+cam_tbm,Options in the Run tab,,in_scope
+cam_tbm,Reference,,in_scope
+cam_tbm,Tolerance Based Machining,,in_scope
+cam_tbm,Tolerance Based Machining - Run Dialog Box,,in_scope
+cam_tbm,Tolerance Based Machining - Settings Dialog Box,,in_scope
+cam_tbm,Tolerance Range tab,,in_scope
+cam_techdb,Cutters,,in_scope
+cam_techdb,Default Feature Strategies (Turn),,in_scope
+cam_techdb,Default Operation Parameters,,in_scope
+cam_techdb,Default Operation Parameters (Turn),,in_scope
+cam_techdb,End Mill Tools,,in_scope
+cam_techdb,Feature and Operations (Turn),,in_scope
+cam_techdb,Features and Operations (Mill),,in_scope
+cam_techdb,Feed/Speed,,in_scope
+cam_techdb,Form Cutter Tools,,in_scope
+cam_techdb,Holders and Assemblies,,in_scope
+cam_techdb,Holders and Assemblies,,in_scope
+cam_techdb,Import/Export Functions,,in_scope
+cam_techdb,Inserts,,in_scope
+cam_techdb,Micro Estimating Material Library,,in_scope
+cam_techdb,Mill,,in_scope
+cam_techdb,Mill Machine,,in_scope
+cam_techdb,Mill Tooling,,in_scope
+cam_techdb,Multi-Stepped Holes,,in_scope
+cam_techdb,Point-to-Point Tools,,in_scope
+cam_techdb,Probe Tools,,in_scope
+cam_techdb,Settings,,in_scope
+cam_techdb,Stock Materials,,in_scope
+cam_techdb,Strategies,,in_scope
+cam_techdb,Strategies,,in_scope
+cam_techdb,Taper Mill Tools,,in_scope
+cam_techdb,Technology Database,,in_scope
+cam_techdb,Technology Database Overview,,in_scope
+cam_techdb,Thread Condition Operations (Turn),,in_scope
+cam_techdb,Thread Mill,,in_scope
+cam_techdb,Threading Strategies,,in_scope
+cam_techdb,Threading Strategies,,in_scope
+cam_techdb,Threading Tools,,in_scope
+cam_techdb,Tool Cribs,,in_scope
+cam_techdb,Tool Cribs,,in_scope
+cam_techdb,Tool Material Types,,in_scope
+cam_techdb,Turn,,in_scope
+cam_techdb,Turn Machine,,in_scope
+cam_techdb,Turn Tooling,,in_scope
+cam_techtips,General Tips,,in_scope
+cam_techtips,Mill Tips,,in_scope
+cam_techtips,TechTips,,in_scope
+cam_techtips,Turn Tips,,in_scope
+cam_turning,Bore,,in_scope
+cam_turning,Center Drill,,in_scope
+cam_turning,Cutoff,,in_scope
+cam_turning,Defining a Turn Feature Section Plane,,in_scope
+cam_turning,Defining the Machine,,in_scope
+cam_turning,Defining the Stock,,in_scope
+cam_turning,Drill,,in_scope
+cam_turning,Face,,in_scope
+cam_turning,Generating and Working with Toolpaths,,in_scope
+cam_turning,Glossary of Turn Terms,,in_scope
+cam_turning,Groove,,in_scope
+cam_turning,Holder/Boring Bars,,in_scope
+cam_turning,Inserting Turn Operations Interactively,,in_scope
+cam_turning,Machinable Features,,in_scope
+cam_turning,Modifying Features,,in_scope
+cam_turning,Operations,,in_scope
+cam_turning,QUICK-TOURS,,in_scope
+cam_turning,Rebuid Process for Turn,,in_scope
+cam_turning,Steps to Generate NC Code,,in_scope
+cam_turning,Tap,,in_scope
+cam_turning,Thread,,in_scope
+cam_turning,Tools,,in_scope
+cam_turning,Turn,,in_scope
+cam_turning,Turn,,in_scope
+cam_turning,Turn Cycles,,in_scope
+cam_turning,User Defined Turn Inserts,,in_scope
+cam_turning,User Defined Turn Tool Holders/Boring Bars,,in_scope
+cam_turning,User-defined Tools and Holders,,in_scope
+cam_turning,Working with Setups,,in_scope
+core,CircuitWorks,,excluded_or_adjacent
+core,DFMXpress,,excluded_or_adjacent
+core,DXF/DWG Import Wizard,,in_scope
+core,Design Checker,,excluded_or_adjacent
+core,DriveWorksXpress,,excluded_or_adjacent
+core,FeatureWorks,,in_scope
+core,FloXpress,,excluded_or_adjacent
+core,Motion Studies,,in_scope
+core,Moving from 2D to 3D,,in_scope
+core,Property Tab Builder,,in_scope
+core,Routing,,in_scope
+core,SOLIDWORKS Installation and Administration Guide,,excluded_or_adjacent
+core,SOLIDWORKS Product Activation,,excluded_or_adjacent
+core,Scan to 3D,,in_scope
+core,Simulation,,excluded_or_adjacent
+core,SimulationXpress,,excluded_or_adjacent
+core,TolAnalyst,,in_scope
+core,Toolbox,,in_scope
+flow,Particle study - Definition,,in_scope
+flow,Tracer study - Definition,,in_scope
+flow_api,API,,reference_only
+flow_api,BaseApiObject,,reference_only
+flow_api,BaseApiObject,,reference_only
+flow_api,CalculationControlOptions,,reference_only
+flow_api,ComputationalDomainSettings,,reference_only
+flow_api,Constants,,reference_only
+flow_api,EnumFDAGoalsCalculationResults,,reference_only
+flow_api,EnumFDAResultFiles,,reference_only
+flow_api,EnumFeatures,,reference_only
+flow_api,EnumParameters,,reference_only
+flow_api,Examples,,reference_only
+flow_api,FDAGoalCalculationResults,,reference_only
+flow_api,FDAGoalsCalculationResults,,reference_only
+flow_api,FDAGoalsCalculationResults,,reference_only
+flow_api,FDAProject,,reference_only
+flow_api,FDAProject,,reference_only
+flow_api,FDAResultFileInfo,,reference_only
+flow_api,FDAResultHandler,,reference_only
+flow_api,FDAResultParametersEvaluator,,reference_only
+flow_api,Feature,,reference_only
+flow_api,IComponent,,reference_only
+flow_api,IEnumComponents,,reference_only
+flow_api,IEnumModelBodies,,reference_only
+flow_api,IFluidSubstanceDependedParameter,,reference_only
+flow_api,IModelBody,,reference_only
+flow_api,IParameterGoal,,reference_only
+flow_api,ITopologyBasedFeature,,reference_only
+flow_api,InitialConditions,,reference_only
+flow_api,InteractiveApplication,,reference_only
+flow_api,MeshSettings,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,Methods,,reference_only
+flow_api,ModelConfiguration,,reference_only
+flow_api,ModelDoc,,reference_only
+flow_api,Objects,,reference_only
+flow_api,Objects,,reference_only
+flow_api,Obsolete API,,reference_only
+flow_api,Parameter,,reference_only
+flow_api,ParametrizedFeature,,reference_only
+flow_api,ProjectFiles,,reference_only
+flow_api,Properties,,reference_only
+flow_api,Properties,,reference_only
+flow_api,Properties,,reference_only
+flow_api,Properties,,reference_only
+flow_api,Properties,,reference_only
+flow_api,Properties,,reference_only
+flow_api,Properties,,reference_only
+flow_api,Properties,,reference_only
+flow_api,Properties,,reference_only
+flow_api,Properties,,reference_only
+flow_api,Properties,,reference_only
+flow_api,Properties,,reference_only
+flow_api,VisualizationParameter,,reference_only
+flow_api,VisualizationParameters,,reference_only
+inspection,About Grids,,in_scope
+inspection,About Notes,,in_scope
+inspection,About Templates,,in_scope
+inspection,Application Options,,in_scope
+inspection,Bill of Characteristics,,in_scope
+inspection,CMM Data Import,,in_scope
+inspection,CMM Data Import Settings,,in_scope
+inspection,Change Grid Options,,in_scope
+inspection,Characteristic Manager,,in_scope
+inspection,Export to Excel,,in_scope
+inspection,Extracting Characteristics from PDFs using OCR,,in_scope
+inspection,GDT Support,,in_scope
+inspection,Getting Started,,in_scope
+inspection,Handling Drawing Revisions,,in_scope
+inspection,Import Templates,,in_scope
+inspection,Introduction,,in_scope
+inspection,Learning Overall Functionality,,in_scope
+inspection,Measurements Input,,in_scope
+inspection,Project Options,,in_scope
+inspection,Project and Applications Options,,in_scope
+inspection,SOLIDWORKS Inspection Professional,,in_scope
+inspection,Saving an Inspection Project,,in_scope
+inspection,Starting a Project,,in_scope
+inspection,Table Manager,,in_scope
+inspection,Troubleshooting,,in_scope
+inspection,Understanding Tokens,,in_scope
+inspection,Understanding and Modifying Balloons,,in_scope
+inspection,Using CMM Data Import,,in_scope
+inspection,Using Project Templates,,in_scope
+inspection,Using Publish/Export,,in_scope
+inspection,Using Report Templates,,in_scope
+inspection,Working with Files,,in_scope

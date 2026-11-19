@@ -1,0 +1,288 @@
+{
+  "schema": 1,
+  "source_kind": "installed CHM TOC, not source text",
+  "version": "SOLIDWORKS 2021 SP1 installation",
+  "records_total": 20793,
+  "unique_entries": 18234,
+  "source_archives": [
+    {
+      "source": "core",
+      "archive_path": "/mnt/c/Program Files/SOLIDWORKS Corp/SOLIDWORKS/lang/english/sldworks.chm",
+      "archive_name": "sldworks.chm",
+      "archive_sha256": "9e4357baab971a63bb3a8c4e431cae579ba42f8c3a6d2a69d410f513cb77aec6",
+      "archive_size": 99503805,
+      "toc_members": [
+        "sldworks.hhc"
+      ],
+      "note": "",
+      "status": "installed_archived_source",
+      "toc_sha256": {
+        "sldworks.hhc": "eaf4d6d6fe1853f7cd24d85efc464ca04ad4e3239369270d29f7074558cc3159"
+      },
+      "toc_entries": {
+        "sldworks.hhc": 3841
+      }
+    },
+    {
+      "source": "api",
+      "archive_path": "/mnt/c/Program Files/SOLIDWORKS Corp/SOLIDWORKS/api/sldworksapi.chm",
+      "archive_name": "sldworksapi.chm",
+      "archive_sha256": "efc49204f0067b0a0ee2ff278084b4c2607d0281dea685742c94053fdebf469c",
+      "archive_size": 30580601,
+      "toc_members": [
+        "sldworksapi.hhc"
+      ],
+      "note": "",
+      "status": "installed_archived_source",
+      "toc_sha256": {
+        "sldworksapi.hhc": "aeff5aa5428de48f049eafa81120b0526c72db9944a7d8c22182ef19ec055028"
+      },
+      "toc_entries": {
+        "sldworksapi.hhc": 10777
+      }
+    },
+    {
+      "source": "flow",
+      "archive_path": "/mnt/c/Program Files/SOLIDWORKS Corp/SOLIDWORKS Flow Simulation/lang/english/FloWorks.chm",
+      "archive_name": "FloWorks.chm",
+      "archive_sha256": "d0c41ac0726bd6f3d032319407fb713daece6c0c680b3932f50c4eccfad3da56",
+      "archive_size": 2413266,
+      "toc_members": [
+        "FloWorks.hhc"
+      ],
+      "note": "",
+      "status": "installed_archived_source",
+      "toc_sha256": {
+        "FloWorks.hhc": "a834c295cb5215d0b5b3880ec7f5d39b51d20c221670d9b77806d2a98185f36b"
+      },
+      "toc_entries": {
+        "FloWorks.hhc": 372
+      }
+    },
+    {
+      "source": "flow_api",
+      "archive_path": "/mnt/c/Program Files/SOLIDWORKS Corp/SOLIDWORKS Flow Simulation/lang/english/CFWAPI.chm",
+      "archive_name": "CFWAPI.chm",
+      "archive_sha256": "8b89339ac93fbe992e64e8d373ebc3e555acab0fe00f0790706181c6255dd552",
+      "archive_size": 353857,
+      "toc_members": [
+        "CFWAPI.hhc"
+      ],
+      "note": "",
+      "status": "installed_archived_source",
+      "toc_sha256": {
+        "CFWAPI.hhc": "0e9be220e51ab3021b26f79a998adb4f068c150cac4c3a04fb1997f59fa59ce7"
+      },
+      "toc_entries": {
+        "CFWAPI.hhc": 367
+      }
+    },
+    {
+      "source": "cam_master",
+      "archive_path": "/mnt/c/Program Files/SOLIDWORKS Corp/SOLIDWORKS CAM/Lang/English/master.chm",
+      "archive_name": "master.chm",
+      "archive_sha256": "8089096e5a03d168a4d60f84d988f9964a9de75d7ed9309dcbc18c9e7280904c",
+      "archive_size": 59823,
+      "toc_members": [
+        "master.hhc"
+      ],
+      "note": "",
+      "status": "installed_archived_source",
+      "toc_sha256": {
+        "master.hhc": "2358b890c2f026f4e0c7a6c84158778369ed456f0b95a891b5edb0dbe47d43eb"
+      },
+      "toc_entries": {
+        "master.hhc": 5
+      }
+    },
+    {
+      "source": "cam_milling",
+      "archive_path": "/mnt/c/Program Files/SOLIDWORKS Corp/SOLIDWORKS CAM/Lang/English/milling.chm",
+      "archive_name": "milling.chm",
+      "archive_sha256": "f492fb0281fcf4a8cb58d67c0bb8335bacc311f319868ed31b5b9c4ec2be8b04",
+      "archive_size": 7136560,
+      "toc_members": [
+        "milling.hhc"
+      ],
+      "note": "",
+      "status": "installed_archived_source",
+      "toc_sha256": {
+        "milling.hhc": "53153630c170243489db7efa2d918d45492daab2c80a85ea8c6251310ed7890a"
+      },
+      "toc_entries": {
+        "milling.hhc": 455
+      }
+    },
+    {
+      "source": "cam_turning",
+      "archive_path": "/mnt/c/Program Files/SOLIDWORKS Corp/SOLIDWORKS CAM/Lang/English/turning.chm",
+      "archive_name": "turning.chm",
+      "archive_sha256": "04df643aac83649bc67b95b14b258f76853ca2ae3bed138f34999177a8620530",
+      "archive_size": 1990834,
+      "toc_members": [
+        "turning.hhc"
+      ],
+      "note": "",
+      "status": "installed_archived_source",
+      "toc_sha256": {
+        "turning.hhc": "4bf035e5a760e900a0cf8f9e17fb7bc9826e717d02846f4268f3c16b814c133c"
+      },
+      "toc_entries": {
+        "turning.hhc": 188
+      }
+    },
+    {
+      "source": "cam_techdb",
+      "archive_path": "/mnt/c/Program Files/SOLIDWORKS Corp/SOLIDWORKS CAM/Lang/English/techdb.chm",
+      "archive_name": "techdb.chm",
+      "archive_sha256": "3b4f4472d3915dfc53b3a491dcd98687a757a230cec7bfc34a23e42f7b383d4d",
+      "archive_size": 1515159,
+      "toc_members": [
+        "techdb.hhc"
+      ],
+      "note": "",
+      "status": "installed_archived_source",
+      "toc_sha256": {
+        "techdb.hhc": "14793623d07877325b3428a65e0cbbbc5c6234afe34d48fa5d8f62df82e6a4f8"
+      },
+      "toc_entries": {
+        "techdb.hhc": 246
+      }
+    },
+    {
+      "source": "cam_tbm",
+      "archive_path": "/mnt/c/Program Files/SOLIDWORKS Corp/SOLIDWORKS CAM/Lang/English/tbm.chm",
+      "archive_name": "tbm.chm",
+      "archive_sha256": "04ca482c4f1522603579f15904373e7c9f9967f4eaa7bc128f9045b6ef176b8d",
+      "archive_size": 204358,
+      "toc_members": [
+        "TBM.hhc"
+      ],
+      "note": "",
+      "status": "installed_archived_source",
+      "toc_sha256": {
+        "TBM.hhc": "2760d129e6cff0e0ec7638394c2375c108b51deab116edf5b352f3879ac2c459"
+      },
+      "toc_entries": {
+        "TBM.hhc": 40
+      }
+    },
+    {
+      "source": "cam_techtips",
+      "archive_path": "/mnt/c/Program Files/SOLIDWORKS Corp/SOLIDWORKS CAM/Lang/English/techtips.chm",
+      "archive_name": "techtips.chm",
+      "archive_sha256": "b0ab602200844555092021e92cdac4bebf93db4c77e4c62d56cae35c04472b0a",
+      "archive_size": 111341,
+      "toc_members": [
+        "techtips.hhc"
+      ],
+      "note": "",
+      "status": "installed_archived_source",
+      "toc_sha256": {
+        "techtips.hhc": "a710fbe48e73a7d5326ba6fc178d4407a7838ea29cdad11e082a66b1774cea21"
+      },
+      "toc_entries": {
+        "techtips.hhc": 7
+      }
+    },
+    {
+      "source": "cam_api",
+      "archive_path": "/mnt/c/Program Files/SOLIDWORKS Corp/SOLIDWORKS CAM/Lang/English/swcamapihelp.chm",
+      "archive_name": "swcamapihelp.chm",
+      "archive_sha256": "d9b8b91d45bf862c00b96149565de5aa0e5be35fdc7465968955774217f90dde",
+      "archive_size": 847558,
+      "toc_members": [
+        "CAMWORKSLib.hhc",
+        "SOLIDWORKSCAMLib.hhc"
+      ],
+      "note": "",
+      "status": "installed_archived_source",
+      "toc_sha256": {
+        "CAMWORKSLib.hhc": "40169b874edbdb68f80a5a5738623d075ebc90aa804fec0734afbc8227d79a63",
+        "SOLIDWORKSCAMLib.hhc": "3866fc77fa85df32b0d5c604dbf704cd128feda619ec938685e31508a1867c39"
+      },
+      "toc_entries": {
+        "CAMWORKSLib.hhc": 2121,
+        "SOLIDWORKSCAMLib.hhc": 2121
+      }
+    },
+    {
+      "source": "inspection",
+      "archive_path": "/mnt/c/Program Files/SOLIDWORKS Corp/SOLIDWORKS Inspection/PDF/en/solidworks inspection standalone.chm",
+      "archive_name": "solidworks inspection standalone.chm",
+      "archive_sha256": "1d2f618ff343b9ae70ae8ed50a33ded3c63aa0821e9f27da1c26d5b1d7ba07f0",
+      "archive_size": 2890166,
+      "toc_members": [
+        "InspectionXpert for PDF 2019.hhc"
+      ],
+      "note": "2019.hhc internal title",
+      "status": "installed_archived_source",
+      "toc_sha256": {
+        "InspectionXpert for PDF 2019.hhc": "6d98739092bc71d2b986729a584dd30f4c94d3ccc27cb0d8a606d82a2e39e07b"
+      },
+      "toc_entries": {
+        "InspectionXpert for PDF 2019.hhc": 149
+      }
+    },
+    {
+      "source": "inspection_quickstart",
+      "archive_path": "/mnt/c/Program Files/SOLIDWORKS Corp/SOLIDWORKS Inspection/PDF/solidworks inspection quick start.chm",
+      "archive_name": "solidworks inspection quick start.chm",
+      "archive_sha256": "186e47d2208d37c8e4cbe581be1bf2be97d60d1237347a0f069e488eb2a74e73",
+      "archive_size": 225927,
+      "toc_members": [
+        "IX PDF-OD Quick Start.hhc"
+      ],
+      "note": "",
+      "status": "installed_archived_source",
+      "toc_sha256": {
+        "IX PDF-OD Quick Start.hhc": "45c3bceaba95b46a907ffbd9403ba7ad8f3d6328bd5f6117622d3c5c197aef1a"
+      },
+      "toc_entries": {
+        "IX PDF-OD Quick Start.hhc": 12
+      }
+    },
+    {
+      "source": "plastics",
+      "archive_path": "/mnt/c/Program Files/SOLIDWORKS Corp/SOLIDWORKS Plastics/Document/english/swplastics.chm",
+      "archive_name": "swplastics.chm",
+      "archive_sha256": "f55885ec1eceef38842f70c571a5ecf70375dac0b4b7f7ce4467034ad655f0b0",
+      "archive_size": 1999467,
+      "toc_members": [
+        "swplastics.hhc"
+      ],
+      "note": "",
+      "status": "installed_archived_source",
+      "toc_sha256": {
+        "swplastics.hhc": "4c8c5c2039ceaaec8981664df55c819cb02549c21bf011770a6972b95d805e05"
+      },
+      "toc_entries": {
+        "swplastics.hhc": 92
+      }
+    }
+  ],
+  "counts_by_source": {
+    "api": 10353,
+    "cam_api": 2130,
+    "cam_master": 5,
+    "cam_milling": 455,
+    "cam_tbm": 40,
+    "cam_techdb": 246,
+    "cam_techtips": 7,
+    "cam_turning": 188,
+    "core": 3819,
+    "flow": 372,
+    "flow_api": 367,
+    "inspection": 149,
+    "inspection_quickstart": 12,
+    "plastics": 91
+  },
+  "counts_by_scope": {
+    "reference_only": 12850,
+    "in_scope": 4550,
+    "excluded_or_adjacent": 834
+  },
+  "help_inventory_file": "library/source_inventory.jsonl.gz",
+  "content_research_complete": false,
+  "independent_review_complete": false
+}

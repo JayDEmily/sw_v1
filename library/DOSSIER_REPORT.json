@@ -1,0 +1,14 @@
+{
+  "records": 18234,
+  "in_scope": 4550,
+  "reference_only": 12850,
+  "excluded_or_adjacent": 834,
+  "diagnostic_title_signals": 34,
+  "diagnostic_source_hints": 33,
+  "reviewed_diagnostic_cards_generated": 0,
+  "runtime_validated_diagnostic_cards_generated": 0,
+  "assessment": "Complete navigation dossiers; differential diagnoses and tests require reasoned source-backed work.",
+  "file": "library/topic_dossiers.jsonl.gz",
+  "size_bytes": 1405908,
+  "sha256": "a777385062f2d3e72d11e9503053a5775a8ed053a1af3edca138e36d39d2f3fa"
+}
