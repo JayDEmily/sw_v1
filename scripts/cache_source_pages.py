@@ -16,7 +16,7 @@ def winpath(p):
 def extract(item):
     name,rel=item
     archive=prefix/rel
-    dest=CACHE/name
+    dest=ROOT/".cache"/"help_core" if name=="core" else CACHE/name
     dest.mkdir(parents=True,exist_ok=True)
     cmd=[SEVEN,"x","-y","-r","-bso0","-bsp0","-bse1",
          "-o"+winpath(dest),winpath(archive),"*.htm","*.html"]
@@ -28,7 +28,7 @@ def extract(item):
             "message":result.stderr.decode("cp1252","replace")[-600:]}
 def main():
     only=set(sys.argv[1:]) or set(sources)
-    items=[x for x in sources.items() if x[0] in only and x[0]!="core"]
+    items=[x for x in sources.items() if x[0] in only]
     CACHE.mkdir(parents=True,exist_ok=True)
     manifest=[]
     with ThreadPoolExecutor(max_workers=2) as pool:
